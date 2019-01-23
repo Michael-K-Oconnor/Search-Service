@@ -1,22 +1,10 @@
 const express = require("express");
-const cors = require("cors");
-//const morgan = require("morgan");
-// if (process.env.DB === "mongo") {
-//   console.log("mongo");
-//   var db = require("../db/mongoDB");
-// } else {
-//   console.log("postgres");
-//   var db = require("../db/postgresDB");
-// }
 
 var db = require("../db/postgresDB");
 const expressStatsd = require("./statsD");
 const app = express();
 
 app.use(expressStatsd());
-
-//app.use(morgan("dev"));
-app.use(cors());
 
 function statsd(path) {
   return function(req, res, next) {

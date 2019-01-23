@@ -4,25 +4,13 @@
   "description": "Petsy Recommends",
   "main": "./server/server.js",
   "scripts": {
-    "start": "nodemon ./Server/server.js",
-    "restart": "pm2 startOrRestart ecosystem.config.js",
-    "rebuild": "pm2 deploy ecosystem.config.js production setup",
-    "deploy": "pm2 deploy ecosystem.config.js production"
+    "start": "node ./Server/server.js"
   },
   "author": "Michael OConnor",
   "license": "ISC",
-  "devDependencies": {
-    "cors": "^2.8.5",
-    "dotenv": "^6.2.0",
-    "nodemon": "^1.18.9",
-    "pm2": "^3.2.4"
-  },
   "dependencies": {
     "express": "^4.16.4",
-    "express-statsd": "^0.3.0",
     "knex": "^0.16.3",
-    "mongoose": "^5.4.0",
-    "morgan": "^1.9.1",
     "node-statsd": "^0.1.1",
     "pg": "^7.8.0"
   }
