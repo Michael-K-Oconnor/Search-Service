@@ -23,7 +23,7 @@ app.get("/api/recommends/:pet_id", statsd("recommends"), async (req, res) => {
       let result = await db.getRecommendedPets(req.params.pet_id);
       req.dbQueryTime = new Date().getTime() - dbStartTime;
       if (result.length === 0) {
-        res.sendStatus(404);
+        res.sendStatus(204);
       } else {
         res.send(result);
       }
